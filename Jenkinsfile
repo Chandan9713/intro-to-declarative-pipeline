@@ -15,6 +15,7 @@ pipeline {
     stage('Deploy') {
       steps {
         input 'should we countinue ?'
+        echo 'continue with deployment'
       }
     }
   }
