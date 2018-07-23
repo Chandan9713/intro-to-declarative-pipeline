@@ -3,17 +3,20 @@ pipeline {
   stages {
     stage('Say Hello') {
       steps {
-        echo "Hello ${MY_NAME}"
+        echo "Hello ${params.Name}!"
       }
     }
     stage('error') {
       steps {
         bat 'java -version'
-        echo "Hello ${MY_NAME}"
+        echo "Hello ${params.Name}!"
       }
     }
   }
   environment {
     MY_NAME = 'chandan'
+  }
+  parameters {
+    string(name: 'Name', defaultValue: 'whoever you are', description: 'Who should I say hi to?')
   }
 }
