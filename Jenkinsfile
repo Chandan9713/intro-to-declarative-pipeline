@@ -6,15 +6,10 @@ pipeline {
         echo "Hello ${params.Name}!"
       }
     }
-    stage('error') {
-      steps {
-        bat 'java -version'
-        echo "Hello ${params.Name}!"
-      }
-    }
+  
     stage('Deploy') {
       options {
-        timeout(time: 30, unit: 'SECONDS')
+        timeout(time: 30, unit: 'SECONDS') 
       }
       input {
         message "Which Version?"
@@ -36,3 +31,4 @@ pipeline {
   }
 }
 }
+
