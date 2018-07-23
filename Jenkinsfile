@@ -13,6 +13,9 @@ pipeline {
       }
     }
     stage('Deploy') {
+      options {
+        timeout(time: 30, unit: 'SECONDS')
+      }
       steps {
         input 'should we countinue ?'
         echo 'continue with deployment'
