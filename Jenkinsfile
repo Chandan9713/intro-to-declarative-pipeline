@@ -9,7 +9,7 @@ pipeline {
     stage('error') {
       steps {
         bat 'java -version'
-        echo 'hello world'
+        echo "Hello ${MY_NAME}"
       }
     }
   }
