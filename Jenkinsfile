@@ -12,6 +12,11 @@ pipeline {
         echo "Hello ${params.Name}!"
       }
     }
+    stage('Deploy') {
+      steps {
+        input 'should we countinue ?'
+      }
+    }
   }
   environment {
     MY_NAME = 'chandan'
