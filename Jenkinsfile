@@ -6,8 +6,7 @@ pipeline {
         echo "Hello ${params.Name}!"
       }
     }
-  
-    stage('Deploy') {
+     stage('Deploy') {
       options {
         timeout(time: 30, unit: 'SECONDS') 
       }
@@ -23,6 +22,9 @@ pipeline {
       }
     }
   
+  }
+  
+   
   environment {
     MY_NAME = 'chandan'
   }
@@ -30,5 +32,5 @@ pipeline {
     string(name: 'Name', defaultValue: 'whoever you are', description: 'Who should I say hi to?')
   }
 }
-}
+
 
